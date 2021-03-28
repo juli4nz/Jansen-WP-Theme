@@ -1,3 +1,61 @@
 body#tinymce {
-  margin: 12px !important;
+	margin: 12px !important;
+	h2 {
+		font-size: 1.2em;
+		border-top: 1px double silver;
+		margin: 0 0 2px 0;
+		padding: 5px 0px 0px 15px;
+		border-left: 24px solid $main_color;
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+	h3 {
+		font-size: 1.1em;
+		font-weight: normal;
+		font-variant: small-caps;
+		margin: 0 0 15px 40px;
+	}
+	p {
+		margin: 0 0 0 40px;
+		margin-bottom: 20px;
+		&.vorne {
+			margin: 0 0 0 40px;
+			width: 375px;
+			float: left;
+		}
+		&.hinten {
+			margin: 0 0 0 10px;
+			width: 250px;
+			float: left;
+			text-align: right;
+		}
+		&.referenz {
+			margin-left: 0;
+		}
+	}
+	ul {
+		margin: 0 0 10px 60px;
+	}
+	li {
+		list-style-type: square;
+	}
+
+	.blau {
+		color: $main_color;
+	}
+	.blauBold {
+		color: $main_color;
+		font-weight: bold;
+	}
+	.orange {
+		color: $secondary_color;
+	}
+	.orangeBold {
+		color: $secondary_color;
+		font-weight: bold;
+	}
+	.h-subtitle {
+		text-transform: lowercase;
+		font-size: 10px;
+	}
 }
