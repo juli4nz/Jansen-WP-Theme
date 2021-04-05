@@ -11,6 +11,7 @@
       'menu_class' => 'nav',
       ]) !!}
     </nav>
+
     @endif
     @if (has_nav_menu('main_nav'))
     <nav class="nav-primary">

@@ -239,7 +239,10 @@ add_filter('wpcf7_form_elements', function ($content) {
 });
 
 /* Replce search form */
-
 add_filter('get_search_form', function () {
 	return \App\template('widgets.searchform');
 });
+
+/* Disables Contact Form Scripts for posterior enqueue */
+add_filter('wpcf7_load_js', '__return_false'); // Disable CF7 JavaScript
+add_filter('wpcf7_load_css', '__return_false'); // Disable CF7 CSS

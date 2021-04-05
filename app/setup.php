@@ -17,6 +17,20 @@ add_action('wp_enqueue_scripts', function () {
 	if (is_single() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+
+	// Register Contact Form 7 JavaScript & Css files on contact page
+	if (is_page(148)) {
+		if (function_exists('wpcf7_enqueue_scripts')) {
+			wpcf7_enqueue_scripts();
+		}
+
+		if (function_exists('wpcf7_enqueue_styles')) {
+			wpcf7_enqueue_styles();
+		}
+	} else {
+		wp_dequeue_script('google-recaptcha');
+		wp_dequeue_script('wpcf7-recaptcha');
+	}
 }, 100);
 
 /**
@@ -87,10 +101,6 @@ add_action('widgets_init', function () {
 	register_sidebar([
 		'name' => __('Primary', 'sage'),
 		'id' => 'sidebar-primary'
-	] + $config);
-	register_sidebar([
-		'name' => __('Footer', 'sage'),
-		'id' => 'sidebar-footer'
 	] + $config);
 
 	register_widget('App\Widgets\Blog');
